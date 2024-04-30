@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spendee Pirata</title>
+  </head>
+  <body>
+    <h1>Hello Bitch</h1>
+
+    {% for category in categories %} {{ category }} {% endfor %}
+
+    <form action="/categories" method="POST">
+      <label for="category">Categoría</label>
+      <input type="text" name="category" id="" />
+
+      <input type="submit" value="Create category" />
+    </form>
+
+    {% for payment in payments %}
+    <p><strong>Name:</strong> {{ payment.name }}</p>
+    <p><strong>Amount:</strong> {{ payment.amount }}</p>
+    --- {% endfor %}
+
+    <form action="/payments" method="POST">
+      <label for="name">Payment name</label>
+      <input type="text" name="name" id="" />
+
+      <label for="amount">Amount</label>
+      <input type="text" name="amount" id="" />
+
+      <input type="submit" value="Register payment" />
+    </form>
+  </body>
+</html>
